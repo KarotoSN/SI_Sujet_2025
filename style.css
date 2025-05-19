@@ -1,0 +1,413 @@
+/* Import a Google Font (optional, but can enhance design) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* General Body Styles */
+body {
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Slightly softer background */
+    color: #333a40;
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+nav .nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #005a9e;
+    text-decoration: none;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+nav ul li {
+    margin-left: 25px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333a40;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+nav ul li a:hover, nav ul li a.active {
+    color: #007bff;
+    background-color: #e9ecef;
+}
+
+/* Header / Hero Section Styles (Primarily for Welcome Page) */
+header.hero-section {
+    background: linear-gradient(135deg, #005a9e 0%, #007bff 100%);
+    color: #fff;
+    padding: 80px 20px; /* Increased padding */
+    text-align: center;
+    min-height: 300px; /* Minimum height for hero */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0; /* Remove bottom margin if nav follows directly */
+}
+header.hero-section h1 {
+    margin: 0 0 15px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5em; /* Larger font size */
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+header.hero-section p.subtitle {
+    font-size: 1.4em;
+    margin-bottom: 0;
+    font-weight: 300;
+    max-width: 700px;
+}
+
+/* Standard Header for index.html (if not using hero) */
+header.standard-header {
+    background-color: #005a9e;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+header.standard-header h1 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+}
+
+
+/* Welcome Page - Accueil Section Styles */
+.accueil-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff; 
+}
+.accueil-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.accueil-blocks-container {
+    display: flex;
+    justify-content: center; /* Center blocks */
+    align-items: stretch; 
+    flex-wrap: wrap;
+    gap: 30px; /* Spacing between blocks */
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.accueil-block {
+    background: #fff;
+    color: #007bff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px; /* Fixed width for consistent sizing */
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e0e7ff;
+    position: relative;
+}
+
+.accueil-block:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 35px rgba(0, 123, 255, 0.2);
+}
+
+.accueil-block .icon-placeholder {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.accueil-block h3 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7em;
+    font-weight: 600;
+    color: #005a9e;
+}
+
+/* Main Content Container for index.html */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto; /* Added top/bottom margin */
+    padding: 0 20px;
+}
+
+/* Category Titles (h2) on index.html */
+h2.category-title {
+    color: #005a9e;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.6em;
+    font-weight: 600;
+    border-bottom: 4px solid #007bff;
+    padding-bottom: 15px;
+    scroll-margin-top: 80px; /* Adjust for sticky nav */
+}
+
+/* Project Item Styling */
+li.project-item {
+    background-color: #fff;
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e9ecef;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    overflow: hidden; /* To contain child elements if needed */
+}
+li.project-item:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+}
+/* Styling for individual project pages, using a similar structure to project-item */
+.project-detail-item {
+    background-color: #fff;
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e9ecef;
+}
+.project-detail-item h3 {
+    color: #005a9e;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.9em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.project-detail-item p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: #495057;
+}
+.project-detail-item p strong {
+    color: #005a9e;
+    font-weight: 600;
+}
+
+/* Iframe Styling */
+iframe {
+    width: 100%;
+    height: 750px; 
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; 
+}
+
+/* Resource Link Button Styling */
+a.ressources-link {
+    display: inline-block;
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: #fff;
+    padding: 12px 22px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+    border: none;
+}
+a.ressources-link:hover {
+    background: linear-gradient(90deg, #218838, #1e7e34);
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Style for PDF action buttons */
+.pdf-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.pdf-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.view-button {
+    background: linear-gradient(90deg, #005a9e, #007bff);
+    color: #fff;
+}
+
+.download-button {
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: #fff;
+}
+
+.pdf-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+}
+
+.view-button:hover {
+    background: linear-gradient(90deg, #007bff, #005a9e);
+}
+
+.download-button:hover {
+    background: linear-gradient(90deg, #218838, #1e7e34);
+}
+
+.pdf-button i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    background-color: #2c3e50; /* Darker, more distinct footer */
+    color: #e9ecef; 
+    font-size: 1em;
+}
+footer p {
+    margin: 0;
+}
+
+/* Project Categories Styling */
+.project-category {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 3px solid #e0e7ff;
+    width: 100%;
+}
+
+.project-category:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.category-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.2em;
+    color: #005a9e;
+    margin-bottom: 25px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e0e7ff;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific accueil-blocks-container for project categories */
+.project-category .accueil-blocks-container {
+    justify-content: center;
+    max-width: 1000px;
+}
+
+/* Adjusting accueil-blocks for project categories */
+.project-category .accueil-block {
+    width: 250px;
+    margin: 0 15px 20px;
+}
+
+/* Ensure responsive behavior */
+@media (max-width: 1100px) {
+    .accueil-blocks-container {
+        flex-wrap: wrap; /* Permettre l'enveloppement sur les écrans plus petits */
+        justify-content: center;
+    }
+    
+    .accueil-block {
+        width: 45%; /* Deux blocs par ligne sur tablette */
+        margin: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .accueil-block {
+        width: calc(50% - 30px); /* Two blocks per row */
+    }
+}
+
+@media (max-width: 768px) {
+    nav .nav-container {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 15px;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    header.hero-section h1 {
+        font-size: 2.8em;
+    }
+    header.hero-section p.subtitle {
+        font-size: 1.2em;
+    }
+    .accueil-block {
+        width: calc(100% - 30px); /* Full width on smaller screens */
+    }
+    h2.category-title {
+        font-size: 2.2em;
+    }
+    li.project-item h3 {
+        font-size: 1.6em;
+    }
+    iframe {
+        height: 600px;
+    }
+}
