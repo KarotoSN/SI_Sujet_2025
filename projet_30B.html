@@ -20,24 +20,25 @@
 
     <div class="container">        <div class="project-detail-item">
             <h3>Détails du Sujet B</h3>
-            <p><strong>Sujet:</strong></p>
-              <div class="pdf-buttons">
+            <p><strong>Sujet:</strong></p>            <div class="pdf-buttons">
                 <a href="pdfs/30B/Sujet30B_TravellingMotorise.pdf" target="_blank" class="pdf-button view-button">Afficher le PDF</a>
                 <a href="pdfs/30B/Sujet30B_TravellingMotorise.pdf" download class="pdf-button download-button">Télécharger le PDF</a>
             </div>
             
-            <iframe src="pdfs/30B/Sujet30B_TravellingMotorise.pdf"></iframe>
+            <iframe src="pdfs/30B/Sujet30B_TravellingMotorise.pdf" type="application/pdf">
+                <p>Votre navigateur ne supporte pas l'affichage des PDF. <a href="pdfs/30B/Sujet30B_TravellingMotorise.pdf" target="_blank">Cliquez ici pour voir le PDF</a>.</p>
+            </iframe>
               <p><strong>Dossier Ressources:</strong></p>
             <div class="pdf-buttons">
                 <a href="pdfs/resources/30B/DossierRessources30B-TravellingMotorise.pdf" target="_blank" class="pdf-button view-button">Afficher les Ressources</a>
                 <a href="pdfs/resources/30B/DossierRessources30B-TravellingMotorise.pdf" download class="pdf-button download-button">Télécharger les Ressources</a>
             </div>
         </div>
-    </div>
-
-    <footer>
+    </div>    <footer>
         <p>&copy; 2025 Projets SI. Tous droits réservés.</p>
     </footer>
     <script src="script.js"></script>
+    <script src="fallbackPdf.js"></script>
+    <script src="sw-register.js"></script>
 </body>
 </html>

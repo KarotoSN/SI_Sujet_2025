@@ -238,6 +238,32 @@ iframe {
     background-color: #f8f9fa; 
 }
 
+/* PDF Loading and Fallback Styling */
+.pdf-loading {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin: 15px 0;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.pdf-fallback {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
 /* Resource Link Button Styling */
 a.ressources-link {
     display: inline-block;

@@ -10,10 +10,21 @@
   ],
   "headers": [
     {
-      "source": "/pdfs/(.*)",
+      "source": "/pdfs/(.*)\\.pdf",
       "headers": [
         { "key": "Content-Type", "value": "application/pdf" },
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        { "key": "Content-Disposition", "value": "inline" },
+        { "key": "Cache-Control", "value": "public, max-age=86400" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
       ]
     }
   ]
