@@ -2,6 +2,16 @@
 
 Ce site web présente une collection de projets de Sciences de l'Ingénieur pour l'année 2025.
 
+## Mise à jour : Affichage des PDFs style Scribd
+
+Le site utilise maintenant un affichage des PDFs inspiré du site letudiant.fr, qui implémente une interface similaire à Scribd. Cela améliore l'expérience utilisateur en proposant :
+
+- Un affichage encadré avec en-tête indiquant le titre du document
+- Des boutons d'action bien visibles pour voir en plein écran ou télécharger
+- Une meilleure prise en charge des appareils mobiles
+- Un chargement progressif avec indicateur
+- Une gestion des navigateurs sans support PDF
+
 ## Structure du Projet
 
 - `welcome.html` - Page d'accueil du site
@@ -9,6 +19,9 @@ Ce site web présente une collection de projets de Sciences de l'Ingénieur pour
 - `pdfs/` - Dossier contenant tous les PDF des sujets et ressources
 - `style.css` - Feuille de style du site
 - `script.js` - Script JavaScript du site
+- `scribdStyle.js` - Script pour l'affichage des PDFs style Scribd
+- `fallbackPdf.js` - Gère les alternatives pour les navigateurs sans support PDF
+- `service-worker.js` & `sw-register.js` - Pour la mise en cache des PDFs
 
 ## Déploiement sur Vercel
 
