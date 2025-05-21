@@ -51,8 +51,14 @@ self.addEventListener('install', event => {
 
 // Fetch event - network first, then cache
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    fetch(event.request)
+  // Special handling for PDF files
+  if (event.request.url.includes('.pdf')) {
+    event.respondWith(
+      fetch(event.request, {
+        // Add no-cors mode to help with CORS issues
+        mode: 'no-cors',
+        credentials: 'omit'
+      })
       .then(response => {
         // Clone the response
         const responseToCache = response.clone();
@@ -69,7 +75,29 @@ self.addEventListener('fetch', event => {
         // If network fetch fails, try to get from cache
         return caches.match(event.request);
       })
-  );
+    );
+  } else {
+    // Standard handling for non-PDF resources
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          // Clone the response
+          const responseToCache = response.clone();
+          
+          // Open cache and store the fetched response
+          caches.open(CACHE_NAME)
+            .then(cache => {
+              cache.put(event.request, responseToCache);
+            });
+          
+          return response;
+        })
+        .catch(() => {
+          // If network fetch fails, try to get from cache
+          return caches.match(event.request);
+        })
+    );
+  }
 });
 
 // Activate event - clean up old caches

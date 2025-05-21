@@ -7,24 +7,35 @@
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/$1" }
-  ],
-  "headers": [
+  ],  "headers": [
     {
       "source": "/pdfs/(.*)\\.pdf",
-      "headers": [
-        { "key": "Content-Type", "value": "application/pdf" },
+      "headers": [        { "key": "Content-Type", "value": "application/pdf" },
         { "key": "Content-Disposition", "value": "inline" },
         { "key": "Cache-Control", "value": "public, max-age=86400" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Content-Type, Accept" },{ "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Cross-Origin-Resource-Policy", "value": "cross-origin" },
+        { "key": "Cross-Origin-Embedder-Policy", "value": "unsafe-none" }      ]
+    },
+    {
+      "source": "/pdfs/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "X-Requested-With, Content-Type, Accept" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob:; object-src 'self' blob: data:; frame-src 'self' blob: data:; connect-src *;" }
       ]
     },
     {
       "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+      "headers": [        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src 'self' blob: data:; img-src 'self' data: blob:; object-src 'self' blob: data:; connect-src 'self' blob:; frame-ancestors 'self'; worker-src 'self' blob:;" },
+        { "key": "Permissions-Policy", "value": "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" }
       ]
     }
   ]
